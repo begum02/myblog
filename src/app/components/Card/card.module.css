@@ -1,0 +1,51 @@
+.blogCard {
+    width: 400px; /* Take full width of grid cell */
+    min-width: 300px;
+    max-width: 400px;
+    height: 250px;
+    border: 2px solid #4a4a4a;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  
+    margin: 0 auto; /* Center card in grid cell */
+}
+
+.blogCard:hover {
+    transform: translateY(-5px);
+}
+
+.blogTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.blogDescription {
+    color: rgb(161, 150, 150);
+    font-size: 16px;
+    line-height: 1.5;  /* Add line height */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;  /* Exactly 2 lines */
+    max-height: calc(1.5em * 4);  /* Match line height */
+    margin-bottom: 20px; 
+   
+}
+    
+
+.blogLink {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.blogLink:hover {
+    color: rgb(161, 150, 150);
+}

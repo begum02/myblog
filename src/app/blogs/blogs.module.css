@@ -1,0 +1,199 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  color: #ffffff;
+  font-family: var(--font-montserrat);
+  margin-left: 20px;
+  max-width: fit-content;
+  padding-right: 10px;
+}
+
+.list {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 16px;
+  margin-right: 20px;
+  border-right: 1px solid rgba(161, 150, 150, 0.2);
+  width: 250px; /* Add this to control list width */
+  overflow-x: hidden; /* Add this to hide horizontal scrollbar */
+}
+
+/* Custom Scrollbar Styles */
+.list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: rgba(161, 150, 150, 0.3);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(161, 150, 150, 0.5);
+}
+
+/* List Item Styles */
+.list :global(.MuiListItem-root) {
+  padding: 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.list :global(.MuiListItem-root:hover) {
+  background-color: rgba(161, 150, 150, 0.1);
+  cursor: pointer;
+}
+
+.list :global(.MuiListItemText-primary) {
+  color: rgb(255, 255, 255);
+  font-family: var(--font-montserrat);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: rgba(161, 150, 150, 0.1);
+  width: 100%; /* Add this */
+  margin: 4px 0;
+  display: block; /* Add this */
+}
+
+.blogCard:hover {
+  transform: translateY(-5px);
+}
+
+.blogTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.blogDescription {
+  color: rgb(161, 150, 150);
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.blogLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.blogLink:hover {
+  color: rgb(161, 150, 150);
+}
+
+.blogContent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Show 2 cards per row */
+  gap: 30px;
+  max-height: 140vh;
+  overflow-y: auto;
+  margin-top: 40px;
+  margin-left: 200px;
+  padding-right: 30px;
+  width: calc(100% - 250px); /* Account for sidebar width */
+}
+
+.blogContent .card .title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.divider {
+  border-color: rgb(161, 150, 150);
+}
+
+.title {
+  margin-top: 20px;
+  margin-left: 15px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.editor {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.saveButton {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.list ListItem {
+  width: 100%; /* Add this */
+  padding: 12px 0; /* Add this */
+}
+
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-left: 200px;
+  
+}
+
+.paginationContainer {
+  width: 100%; /* Match the width of blogContent */
+   display: flex;
+  justify-content: center;
+
+  
+  margin-top: 20px;
+
+ 
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #005bb5;
+}
+
+.pagination span {
+  font-size: 16px;
+  color: #ffffff;
+}

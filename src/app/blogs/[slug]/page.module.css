@@ -1,0 +1,68 @@
+.page {
+    min-height: 100vh;
+    background-color: var(--background);
+  }
+  
+  .main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .article {
+    background: var(--background);
+    border-radius: 8px;
+    padding: 2rem;
+  }
+  
+  .title {
+    font-family: var(--font-montserrat);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin-bottom: 1rem;
+  }
+  
+  .metadata {
+    font-family: var(--font-montserrat);
+    color: rgb(161, 150, 150);
+    margin-bottom: 2rem;
+  }
+  
+  .content {
+    font-family: var(--font-montserrat);
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: #F0F0F0;
+  }
+
+  .content h1,
+  .content h2,
+  .content h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .content h1 {
+    font-size: 2rem;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+  }
+
+  .content h3 {
+    font-size: 1.25rem;
+  }
+
+  .content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 2rem 0;
+  }

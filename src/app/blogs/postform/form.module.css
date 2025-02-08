@@ -1,0 +1,288 @@
+.editorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  height: auto;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #111827;
+  border-radius: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #F0F0F0;
+  background-color: #1f2937;
+  border: 2px solid #374151;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.title:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.summary {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #F0F0F0;
+  background-color: #1f2937;
+  border: 2px solid #374151;
+  border-radius: 12px;
+  resize: vertical;
+  min-height: 100px;
+  transition: all 0.3s ease;
+}
+
+.summary:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.editor {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 400px;
+}
+
+/* Modern Scrollbar Styles */
+.editor :global(.ql-container::-webkit-scrollbar) {
+  width: 6px;
+}
+
+.editor :global(.ql-container::-webkit-scrollbar-button:start:decrement),
+.editor :global(.ql-container::-webkit-scrollbar-button:end:increment) {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+.editor :global(.ql-container::-webkit-scrollbar-track) {
+  background: transparent;
+  border-radius: 6px;
+}
+
+.editor :global(.ql-container::-webkit-scrollbar-thumb) {
+  background-color: rgba(156, 163, 175, 0.3);
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.editor :global(.ql-container::-webkit-scrollbar-thumb:hover) {
+  background-color: rgba(156, 163, 175, 0.5);
+}
+
+.editor :global(.ql-container::-webkit-scrollbar-corner) {
+  background: transparent;
+}
+
+/* Firefox Scrollbar */
+.editor :global(.ql-container) {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.3) transparent;
+}
+
+/* Editor container specific styles */
+.editor :global(.ql-container) {
+  height: calc(400px - 42px) !important;
+}
+
+.editor :global(.ql-toolbar) {
+  background-color: #1f2937 !important;
+  border: none !important;
+  border-bottom: 2px solid #374151 !important;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 12px !important;
+}
+
+.editor :global(.ql-container) {
+  border: none !important;
+  background-color: #1f2937 !important;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  font-size: 1.1rem;
+}
+
+.editor :global(.ql-editor) {
+  color: #F0F0F0;
+  min-height: 300px;
+  padding: 20px;
+}
+
+.editor :global(.ql-snow .ql-stroke) {
+  stroke: #F0F0F0 !important;
+}
+
+.editor :global(.ql-snow .ql-fill) {
+  fill: #F0F0F0 !important;
+}
+
+.editor :global(.ql-snow .ql-picker) {
+  color: #F0F0F0 !important;
+}
+
+.editor :global(.ql-snow .ql-toolbar button.ql-hr) {
+  width: 28px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.editor :global(.ql-snow .ql-toolbar button.ql-hr:before) {
+  content: '';
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  top: 50%;
+  height: 2px;
+  background-color: #444;
+}
+
+.editor :global(.ql-snow .ql-toolbar button.ql-hr:after) {
+  content: 'HR (Ctrl+Shift+H)';
+  position: absolute;
+  background: #1f2937;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.editor :global(.ql-snow .ql-toolbar button.ql-hr:hover:after) {
+  opacity: 1;
+}
+
+.editor :global(.ql-snow .ql-toolbar .ql-hr) {
+  width: 28px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.editor :global(.ql-snow .ql-toolbar .ql-hr:before) {
+  content: '';
+  width: 16px;
+  height: 2px;
+  background-color: #F0F0F0;
+  position: absolute;
+}
+
+.editor :global(.ql-snow .ql-toolbar .ql-hr:after) {
+  content: 'Yatay Çizgi (Ctrl+L)';
+  position: absolute;
+  background: #1f2937;
+  color: #F0F0F0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.editor :global(.ql-snow .ql-toolbar .ql-hr:hover:after) {
+  opacity: 1;
+}
+
+.editor :global(.ql-editor hr) {
+  border: none;
+  height: 2px;
+  background-color: #fff;
+  margin: 1.5em 0;
+}
+
+.saveButton {
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.saveButton:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.saveButton:active {
+  transform: translateY(1px);
+}
+
+/* Placeholder styles */
+.title::placeholder,
+.summary::placeholder {
+  color: #9ca3af;
+}
+
+/* Focus states for better accessibility */
+.title:focus,
+.summary:focus,
+.editor:focus,
+.saveButton:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.title:focus-visible,
+.summary:focus-visible,
+.editor:focus-visible,
+.saveButton:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.category {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #F0F0F0;
+    background-color: #1f2937;
+    border: 2px solid #374151;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  .category:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  }
+  
+  .category::placeholder {
+    color: #9ca3af;
+  }
