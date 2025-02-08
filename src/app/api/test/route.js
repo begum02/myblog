@@ -2,8 +2,6 @@ import { NextResponse } from 'next/server';
 import connectToDatabase from '@/lib/mongodb';
 import Project from '@/models/Project';
 import Post from '@/models/Post';
-import path from 'path';
-import fs from 'fs';
 
 export async function GET(request) {
   try {
@@ -12,6 +10,8 @@ export async function GET(request) {
     const type = searchParams.get('type');
     const slug = searchParams.get('slug');
 
+    console.log('GET request received with type:', type, 'and slug:', slug);
+
     if (type === 'projects') {
       const projects = await Project.find({});
       return NextResponse.json({ success: true, data: projects });
@@ -19,6 +19,7 @@ export async function GET(request) {
       if (slug) {
         const post = await Post.findOne({ slug });
         if (!post) {
+          console.log('Post not found for slug:', slug);
           return NextResponse.json({ success: false, error: 'Post not found' }, { status: 404 });
         }
         return NextResponse.json({ success: true, data: post });
@@ -37,13 +38,13 @@ export async function GET(request) {
 
 export async function POST(request) {
   try {
-    await dbConnect();
+    await connectToDatabase();
     const formData = await request.formData();
     const type = formData.get('type');
 
     if (type === 'project') {
       const image = formData.get('image');
-      const imagePath = path.join(process.cwd(), 'uploads', image.name);
+      const imagePath = path.join(process.cwd(), 'public', 'uploads', image.name);
       const imageStream = fs.createWriteStream(imagePath);
       imageStream.write(Buffer.from(await image.arrayBuffer()));
       imageStream.end();
@@ -52,7 +53,7 @@ export async function POST(request) {
         title: formData.get('title'),
         summary: formData.get('summary'),
         githubLink: formData.get('githubLink'),
-        image:  `/uploads/${image.name}`,
+        image: `/uploads/${image.name}`,
       });
 
       return NextResponse.json({ success: true, data: project }, { status: 201 });
